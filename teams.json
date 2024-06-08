@@ -1,0 +1,65 @@
+[
+{
+    "teamName": "A",
+    "players": [
+        {
+            "name": "Jaime",
+            "url" : "https://check-pvp.fr/eu/Ravencrest/Jaim%C3%A6"
+        },
+        {
+            "name": "Coffey",
+            "url" : "https://check-pvp.fr/eu/Ragnaros/Johncoff%C3%A8y"
+        },
+        {
+            "name": "Raiku",
+            "url" : "https://check-pvp.fr/eu/Ravencrest/Ra%C3%ADku"
+        },
+        {
+            "name": "Shadenox",
+            "url" : "https://check-pvp.fr/eu/Ravencrest/Shadenox"
+        }
+    ]
+},
+{
+    "teamName": "B",
+    "players": [
+        {
+            "name": "Kanketo",
+            "url" : "https://check-pvp.fr/eu/Kazzak/Kanketo"
+        },
+        {
+            "name": "Habibi",
+            "url" : "https://check-pvp.fr/eu/Kazzak/Habibyy"
+        },
+        {
+            "name": "Àkròlolz",
+            "url" : "https://check-pvp.fr/eu/Outland/%C3%80kr%C3%B2lolz"
+        },
+        {
+            "name": "Corki",
+            "url" : "https://check-pvp.fr/eu/Tarren%20Mill/Corkiri"
+        }
+    ]
+},
+{
+    "teamName": "C",
+    "players": [
+        {
+            "name": "Langneur",
+            "url" : "https://check-pvp.fr/eu/Ysondre/Langneur"
+        },
+        {
+            "name": "Seijo",
+            "url" : "https://check-pvp.fr/eu/Archimonde/Seijobaesuzy"
+        },
+        {
+            "name": "Guzz",
+            "url" : "https://check-pvp.fr/eu/Tarren%20Mill/Guzzelinare"
+        },
+        {
+            "name": "Jayti",
+            "url" : "https://check-pvp.fr/eu/Ravencrest/Jayti"
+        }
+    ]
+}
+]
