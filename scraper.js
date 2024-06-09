@@ -115,7 +115,8 @@ fs.readFile(jsonFile, 'utf8', async (err, data) => {
         console.log("Sorted teams:")
         let count = 1
         for (const teamName in orderedTeamData) {
-            console.log(`${count}. ${teamName}`); //output final
+            const value = orderedTeamData[teamName].toFixed(2) //format team cr value to 2 DP
+            console.log(`${count}. ${teamName}: ${value}`); //output final
             count++;
         }
     } catch (error) { console.error("Error parsing: ", error)}
