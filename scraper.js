@@ -1,8 +1,7 @@
 const puppeteer = require("puppeteer");
-const cheerio = require('cheerio');
 const fs = require('fs')
 const { URL }= require('url');
-const { addAbortSignal } = require("stream");
+
 //init files
 const jsonFile = "teams.json"
 let teamData = []
