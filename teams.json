@@ -4,19 +4,19 @@
     "players": [
         {
             "name": "Jaime",
-            "url" : "https://check-pvp.fr/eu/Ravencrest/Jaim%C3%A6"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ravencrest/jaim%C3%A6"
         },
         {
             "name": "Coffey",
-            "url" : "https://check-pvp.fr/eu/Ragnaros/Johncoff%C3%A8y"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ragnaros/johncoff%C3%A8y"
         },
         {
             "name": "Raiku",
-            "url" : "https://check-pvp.fr/eu/Ravencrest/Ra%C3%ADku"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ravencrest/ra%C3%ADku"
         },
         {
             "name": "Shadenox",
-            "url" : "https://check-pvp.fr/eu/Ravencrest/Shadenox"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ravencrest/shadenox"
         }
     ]
 },
@@ -25,19 +25,19 @@
     "players": [
         {
             "name": "Kanketo",
-            "url" : "https://check-pvp.fr/eu/Kazzak/Kanketo"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/kazzak/kanketo"
         },
         {
             "name": "Habibi",
-            "url" : "https://check-pvp.fr/eu/Kazzak/Habibyy"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/kazzak/habibyy"
         },
         {
             "name": "Àkròlolz",
-            "url" : "https://check-pvp.fr/eu/Outland/%C3%80kr%C3%B2lolz"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/outland/%C3%A0kr%C3%B2lolz"
         },
         {
             "name": "Corki",
-            "url" : "https://check-pvp.fr/eu/Tarren%20Mill/Corkiri"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/tarren-mill/corkiri"
         }
     ]
 },
@@ -46,19 +46,19 @@
     "players": [
         {
             "name": "Langneur",
-            "url" : "https://check-pvp.fr/eu/Ysondre/Langneur"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ysondre/langneur"
         },
         {
             "name": "Seijo",
-            "url" : "https://check-pvp.fr/eu/Archimonde/Seijobaesuzy"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/archimonde/seijobaesuzy"
         },
         {
             "name": "Guzz",
-            "url" : "https://check-pvp.fr/eu/Tarren%20Mill/Guzzelinare"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/tarren-mill/guzzelinare"
         },
         {
             "name": "Jayti",
-            "url" : "https://check-pvp.fr/eu/Ravencrest/Jayti"
+            "url" : "https://worldofwarcraft.blizzard.com/en-gb/character/eu/ravencrest/jayti"
         }
     ]
 }

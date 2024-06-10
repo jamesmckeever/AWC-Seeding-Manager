@@ -1,6 +1,8 @@
 const puppeteer = require("puppeteer");
+const cheerio = require('cheerio');
 const fs = require('fs')
-
+const { URL }= require('url');
+const { addAbortSignal } = require("stream");
 //init files
 const jsonFile = "teams.json"
 let teamData = []
@@ -8,38 +10,69 @@ let teamData = []
 async function scrape(url) {
     //init puppeteer browser
     const browser = await puppeteer.launch();
-
+    const parsedUrl = new URL(url);
+    let hostname = parsedUrl.hostname;
+    hostname = hostname.split('.')[0]
+    if (hostname == "check-pvp"){ //first website
     try {
-        const page = await browser.newPage()
-        await page.goto(url); //navigate to webpage
-        await page.waitForSelector("button.btn-update"); //find update button to have latest info
-        await page.click("button.btn-update"); 
+            const page = await browser.newPage()
+            await page.goto(url); //navigate to webpage
+            await page.waitForSelector("button.btn-update"); //find update button to have latest info
+            await page.click("button.btn-update"); 
 
-        try { //in real browser sometimes anti-spam confirmation occurs, does not seem to trigger from scraper
-            await page.waitForSelector("button.btn-custom", {timeout: 2000});
-            const authElement = await page.$("button.btn-custom");
-            if (authElement) {
-                await page.click("button.btn-custom:nth-of-type(1)"); //click first button (yes)
-                console.log("Clicked update now")
-            }    
+            try { //in real browser sometimes anti-spam confirmation occurs, does not seem to trigger from scraper
+                await page.waitForSelector("button.btn-custom", {timeout: 2000});
+                const authElement = await page.$("button.btn-custom");
+                if (authElement) {
+                    await page.click("button.btn-custom:nth-of-type(1)"); //click first button (yes)
+                    console.log("Clicked update now")
+                }    
+            }
+            catch (timeoutError) {} // discard if no confirmation window appears
+            await new Promise(r => setTimeout(r, 1000)) // wait 1 second for update
+            await page.reload() // reload for most accurate data (website limitation)
+            await page.waitForSelector(".cote-atm-value"); // find data element
+            const data = await page.evaluate(() => {
+                const elements = document.querySelectorAll('.cote-atm-value'); //target the value element
+                const array = Array.from(elements, element => element.textContent) //select correct value
+                return array[1]
+            }
+        );
+        return data;
         }
-        catch (timeoutError) {} // discard if no confirmation window appears
-        await new Promise(r => setTimeout(r, 1000)) // wait 1 second for update
-        await page.reload() // reload for most accurate data (website limitation)
-        await page.waitForSelector(".cote-atm-value"); // find data element
-        const data = await page.evaluate(() => {
-            const elements = document.querySelectorAll('.cote-atm-value'); //target the value element
-            const array = Array.from(elements, element => element.textContent) //select correct value
-            return array[1]
+        catch (error) {
+            console.error("Error:", error)
         }
-    );
-    return data;
+        finally {
+            await browser.close() //cleanup
+        }
     }
-    catch (error) {
-        console.error("Error:", error)
-    }
-    finally {
+    else //official website
+    {
+        
+        let characterString;
+        try {
+            const page = await browser.newPage()
+            await page.goto(url)
+            const data = await page.evaluate(() => {
+                return JSON.stringify(characterProfileInitialState); //rating data is held in large variable string (characterProfileInitialState)
+            })
+            characterString = data; //assign
+        }        
+        catch (error) {
+            console.error("Error:", error)
+        }
+        
+        const pattern = /"3v3":\s*{\s*"lossCount":\s*\d+,\s*"rating":\s*(\d+)/; //regex to find the necessary data in the string ( ) capture group on rating
+        const match = characterString.match(pattern); //find and match
+        let rating;
+        if (match[1]) {
+            rating = parseInt(match[1]);
+        }
+        
         await browser.close() //cleanup
+        
+        return rating
     }
 }
 
